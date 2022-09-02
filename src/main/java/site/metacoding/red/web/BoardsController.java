@@ -3,11 +3,13 @@ package site.metacoding.red.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 @Controller
 public class BoardsController {
 
-	@GetMapping("/boards")
+	@GetMapping({"/", "/boards"})
 	public String getBoardList() {
 		return "boards/main";
 	}
@@ -21,4 +23,7 @@ public class BoardsController {
 	public String writeForm() {
 		return "boards/writeForm";
 	}
+	
+	//@PostMapping("/boards/{id}/delete")
+	//@PostMapping("/boards/{id}/update")
 }

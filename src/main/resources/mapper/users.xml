@@ -5,7 +5,8 @@
 <mapper namespace="site.metacoding.red.domain.users.UsersDao">
 	
 	<insert id="insert">
-		
+		INSERT INTO users(id, username, password, email, createdAt)
+		VALUES(users_seq.nextval, #{username}, #{password}, #{email}, sysdate)
 	</insert>
 
 	<select id="findById" resultType="site.metacoding.red.domain.users.Users">
@@ -14,6 +15,10 @@
 	
 	<select id="findAll" resultType="site.metacoding.red.domain.users.Users">
 		
+	</select>
+	
+	<select id="login" resultType="site.metacoding.red.domain.users.Users">
+		SELECT * FROM users WHERE username = #{username} AND password =${password}
 	</select>
 	
 	<update id="update">
