@@ -14,7 +14,6 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<h1>${sessionScope.principal.username}</h1>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/boards">Blog</a>
@@ -32,12 +31,14 @@
 							</li>
 						</c:when>
 						<c:otherwise>
+							
 							<li class="nav-item"><a class="nav-link"
 								href="/boards/writeForm">글쓰기</a>
 							</li>
 							<li class="nav-item"><a class="nav-link"
 								href="/logout">로그아웃</a>
 							</li>
+							<li class="nav-item"><a class="nav-link">${sessionScope.principal.username}님 반갑습니다.</a></li>
 						</c:otherwise>
 					</c:choose>
 				
