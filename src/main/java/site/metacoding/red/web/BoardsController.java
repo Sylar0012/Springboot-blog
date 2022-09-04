@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.red.domain.boards.BoardsDao;
@@ -48,21 +48,9 @@ public class BoardsController {
 		return"redirect:/";
 	}
 	
-	//@PostMapping("/boards/{id}/delete")
+	@PostMapping("/boards/{id}/delete")
+	public String delete(@PathVariable Integer bid, Integer uid) {
+		return"redirect:/";
+	}
 	//@PostMapping("/boards/{id}/update")
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

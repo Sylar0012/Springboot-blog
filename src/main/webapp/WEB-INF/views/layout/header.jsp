@@ -31,7 +31,6 @@
 							</li>
 						</c:when>
 						<c:otherwise>
-							
 							<li class="nav-item"><a class="nav-link"
 								href="/boards/writeForm">글쓰기</a>
 							</li>

@@ -11,7 +11,11 @@
 
 	<select id="detail"
 		resultType="site.metacoding.red.web.dto.request.boards.DetailDto">
-	SELECT title, content, id FROM boards WHERE id = #{id}
+	SELECT b.id, b.title, u.username, b.content, b.createdat
+		FROM boards b 
+		INNER JOIN
+		users u ON b.usersid = u.id
+        where b.id = #{id}
 	</select>
 
 	<select id="findAll"
@@ -24,7 +28,7 @@
 	</select>
 
 	<update id="update">
-
+	
 	</update>
 
 	<delete id="delete">
